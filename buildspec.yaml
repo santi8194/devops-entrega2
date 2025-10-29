@@ -3,7 +3,16 @@ version: 0.2
 phases:
   pre_build:
     commands:
+      - echo "In the pre_build phase..."
       - pip install -r requirements.txt
+  build:
+    commands:
+      - echo "Running tests..."
+      - python -m unittest discover tests
+  post_build:
+    commands:
+      - echo "Build completed on `date`"
 artifacts:
   files:
     - "**/*"
+  name: devops-entrega2-$(date +%Y-%m-%d)
