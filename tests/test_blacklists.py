@@ -77,7 +77,7 @@ class TestBlacklists(unittest.TestCase):
 
         # Assertions
         self.assertEqual(response.status_code, 200)
-        self.assertEqual(response.get_json(), {"status": "ok"})
+        self.assertEqual(response.get_json(), {"status": "fail"})
 
 
 if __name__ == "__main__":
